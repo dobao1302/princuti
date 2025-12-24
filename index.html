@@ -226,42 +226,7 @@ img {
     50%  { transform: rotate(5deg); }
     100% { transform: rotate(-5deg); }
 }
-/* ================= ẢNH TRANG TRÍ 2 BÊN (4 ẢNH) ================= */
-.decor {
-    position: fixed;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.6;
-    animation: float 6s ease-in-out infinite;
-}
 
-/* BÊN TRÁI */
-.decor.left {
-    left: 8px;
-}
-
-/* BÊN PHẢI */
-.decor.right {
-    right: 8px;
-}
-
-/* ẢNH TRÊN (1:1) */
-.decor.top {
-    top: 120px;
-    width: clamp(55px, 13vw, 95px);
-}
-
-/* ẢNH DƯỚI (3:4) */
-.decor.bottom {
-    bottom: 40px;
-    width: clamp(70px, 16vw, 120px);
-}
-
-/* Bay nhẹ */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
 .decor {
     position: fixed;   /* luôn đứng yên khi scroll */
     width: 100px;      /* chỉnh kích thước ảnh to hơn */
@@ -277,6 +242,30 @@ img {
 /* Bên phải */
 .right.top { top: 50px; right: 10px; }
 .right.bottom { bottom: 50px; right: 10px; }
+    
+/* ================= ẢNH TRANG TRÍ 2 BÊN (4 ẢNH) ================= */
+.decor {
+    position: fixed;   /* luôn đứng yên */
+    width: 100px;      /* kích thước ảnh */
+    height: auto;      /* giữ tỉ lệ ảnh */
+    z-index: 1;        /* phía dưới card */
+    border-radius: 10px;
+    opacity: 1;        /* luôn rõ nét */
+    animation: swing 3s ease-in-out infinite alternate; /* lắc lư nhẹ */
+}
+
+/* Vị trí ảnh */
+.left.top { top: 50px; left: 10px; }
+.left.bottom { bottom: 50px; left: 10px; }
+.right.top { top: 50px; right: 10px; }
+.right.bottom { bottom: 50px; right: 10px; }
+
+/* keyframes cho lắc lư */
+@keyframes swing {
+    0%   { transform: rotate(-5deg); }
+    50%  { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
 
 </style>
 
@@ -387,6 +376,7 @@ function startSnow() {
 
 </body>
 </html>
+
 
 
 
