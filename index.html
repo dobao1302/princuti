@@ -204,24 +204,36 @@ img {
     50%  { transform: rotate(5deg); }
     100% { transform: rotate(-5deg); }
 }
-/* ================= ẢNH TRANG TRÍ 2 BÊN (4 ẢNH) ================= */
+/* ================= ẢNH TRANG TRÍ 10 ẢNH ================= */
 .decor {
-    position: fixed;                /* luôn đứng yên */
-    width: clamp(120px, 15vw, 160px); /* to hơn nhưng vẫn co giãn */
-    height: auto;                   /* giữ tỉ lệ ảnh */
+    position: fixed;                
+    width: clamp(120px, 15vw, 160px); /* cùng kích thước với 4 ảnh cũ */
+    height: auto;                   
     border-radius: 10px;
-    opacity: 1;                     /* luôn rõ nét */
+    opacity: 1;                     
     animation: swing 3s ease-in-out infinite alternate; /* lắc lư nhẹ */
-    z-index: 2;                     /* nổi trên cây thông */
+    z-index: 2;                     
 }
 
-/* Vị trí ảnh */
+/* 4 ảnh cũ */
 .left.top { top: 50px; left: 10px; }
-.left.bottom { bottom: 120px; left: 10px; }   /* kéo lên cao hơn cây */
+.left.bottom { bottom: 120px; left: 10px; }   
 .right.top { top: 50px; right: 10px; }
-.right.bottom { bottom: 120px; right: 10px; } /* kéo lên cao hơn cây */
+.right.bottom { bottom: 120px; right: 10px; }
 
-/* keyframes cho lắc lư */
+/* Ảnh trung tâm trên & dưới */
+.center.top { top: 10px; left: 50%; transform: translateX(-50%); }
+.center.bottom { bottom: 10px; left: 50%; transform: translateX(-50%); }
+
+/* 2 ảnh giữa bên trái */
+.left.middle1 { top: 35%; left: 10px; }
+.left.middle2 { top: 65%; left: 10px; }
+
+/* 2 ảnh giữa bên phải */
+.right.middle1 { top: 35%; right: 10px; }
+.right.middle2 { top: 65%; right: 10px; }
+
+/* keyframes lắc lư */
 @keyframes swing {
     0%   { transform: rotate(-5deg); }
     50%  { transform: rotate(5deg); }
@@ -234,13 +246,19 @@ img {
 
 <body>
 
-<!-- ẢNH TRANG TRÍ 2 BÊN -->
+<!-- ẢNH TRANG TRÍ 10 ẢNH -->
 <img src="pn1.jpg" class="decor left top">
 <img src="pn2.jpg" class="decor left bottom">
-
 <img src="db1.jpg" class="decor right top">
 <img src="db2.jpg" class="decor right bottom">
 
+<!-- Ảnh mới -->
+<img src="new1.jpg" class="decor center top">
+<img src="new2.jpg" class="decor center bottom">
+<img src="new3.jpg" class="decor left middle1">
+<img src="new4.jpg" class="decor left middle2">
+<img src="new5.jpg" class="decor right middle1">
+<img src="new6.jpg" class="decor right middle2">
 
 <!-- DÂY ĐÈN -->
 <div class="rope">
@@ -333,16 +351,3 @@ function startSnow() {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
