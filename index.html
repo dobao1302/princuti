@@ -228,29 +228,6 @@ img {
     100% { transform: rotate(-5deg); }
 }
 
-/* ================= CÂY THÔNG ================= */
-.tree {
-    position: fixed;
-    bottom: 40px;
-    font-size: 80px;   /* to hơn 1 chút */
-    animation: sparkle 3s infinite;
-    z-index: 1;        /* thấp hơn ảnh trang trí */
-}
-
-.tree.left { left: 30px; }
-.tree.right { right: 30px; }
-
-@keyframes sparkle {
-    0%, 100% {
-        filter: drop-shadow(0 0 5px gold);
-        transform: scale(1);
-    }
-    50% {
-        filter: drop-shadow(0 0 14px gold);
-        transform: scale(1.06);
-    }
-}
-
 </style>
 
 </head>
@@ -360,6 +337,7 @@ function startSnow() {
 
 </body>
 </html>
+
 
 
 
