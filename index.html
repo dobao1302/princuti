@@ -216,6 +216,8 @@ img {
     opacity: 1;                            /* luôn rõ nét */
     animation: swing 3s ease-in-out infinite alternate; /* lắc lư nhẹ */
     z-index: 2;                            /* nổi trên cây thông nếu có */
+    display: block;                        /* khắc phục lệch inline */
+    margin: 0;                              /* xóa margin mặc định */
 }
 
 /* 2 ảnh trung tâm trên/dưới */
@@ -232,12 +234,12 @@ img {
 }
 
 /* 2 ảnh bên trái cũ */
-.decor.left.top { top: 50px; left: 10px; }
-.decor.left.bottom { bottom: 120px; left: 10px; }
+.decor.left.top { top: 50px; left: 10%; }
+.decor.left.bottom { bottom: 120px; left: 10%; }
 
 /* 2 ảnh bên phải cũ */
-.decor.right.top { top: 50px; right: 10px; }
-.decor.right.bottom { bottom: 120px; right: 10px; }
+.decor.right.top { top: 50px; right: 10%; }
+.decor.right.bottom { bottom: 120px; right: 10%; }
 
 /* 4 ảnh bổ sung (cách đều hơn giữa bên trái và bên phải) */
 .decor.left.middle1 { top: 35%; left: 5%; }
@@ -364,6 +366,7 @@ function startSnow() {
 
 </body>
 </html>
+
 
 
 
