@@ -206,34 +206,44 @@ img {
 }
 /* ================= ẢNH TRANG TRÍ 10 ẢNH ================= */
 .decor {
-    position: fixed;                
-    width: clamp(120px, 15vw, 160px); /* cùng kích thước với 4 ảnh cũ */
-    height: auto;                   
+    position: fixed;                       /* luôn đứng yên */
+    width: clamp(120px, 15vw, 160px);      /* kích thước ảnh */
+    height: auto;                          /* giữ tỉ lệ ảnh */
     border-radius: 10px;
-    opacity: 1;                     
+    opacity: 1;                            /* luôn rõ nét */
     animation: swing 3s ease-in-out infinite alternate; /* lắc lư nhẹ */
-    z-index: 2;                     
+    z-index: 2;                            /* nổi trên cây thông nếu có */
 }
 
-/* 4 ảnh cũ */
-.left.top { top: 50px; left: 10px; }
-.left.bottom { bottom: 120px; left: 10px; }   
-.right.top { top: 50px; right: 10px; }
-.right.bottom { bottom: 120px; right: 10px; }
+/* 2 ảnh trung tâm trên/dưới */
+.decor.center.top {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-/* Ảnh trung tâm trên & dưới */
-.center.top { top: 10px; left: 50%; transform: translateX(-50%); }
-.center.bottom { bottom: 10px; left: 50%; transform: translateX(-50%); }
+.decor.center.bottom {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-/* 2 ảnh giữa bên trái */
-.left.middle1 { top: 35%; left: 10px; }
-.left.middle2 { top: 65%; left: 10px; }
+/* 2 ảnh bên trái cũ */
+.decor.left.top { top: 50px; left: 10px; }
+.decor.left.bottom { bottom: 120px; left: 10px; }
 
-/* 2 ảnh giữa bên phải */
-.right.middle1 { top: 35%; right: 10px; }
-.right.middle2 { top: 65%; right: 10px; }
+/* 2 ảnh bên phải cũ */
+.decor.right.top { top: 50px; right: 10px; }
+.decor.right.bottom { bottom: 120px; right: 10px; }
 
-/* keyframes lắc lư */
+/* 4 ảnh bổ sung (cách đều hơn giữa bên trái và bên phải) */
+.decor.left.middle1 { top: 35%; left: 5%; }
+.decor.left.middle2 { top: 65%; left: 5%; }
+
+.decor.right.middle1 { top: 35%; right: 5%; }
+.decor.right.middle2 { top: 65%; right: 5%; }
+
+/* keyframes swing */
 @keyframes swing {
     0%   { transform: rotate(-5deg); }
     50%  { transform: rotate(5deg); }
@@ -351,4 +361,5 @@ function startSnow() {
 
 </body>
 </html>
+
 
