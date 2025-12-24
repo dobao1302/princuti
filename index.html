@@ -213,32 +213,40 @@ img {
 }
 /* ================= ẢNH TRANG TRÍ 10 ẢNH ================= */
 .decor {
-    position: fixed;                       /* luôn đứng yên */
-    width: clamp(120px, 15vw, 160px);      /* kích thước ảnh */
-    height: auto;                          /* giữ tỉ lệ ảnh */
+    position: fixed;
+    width: clamp(120px, 15vw, 160px); 
+    height: auto;
     border-radius: 10px;
-    opacity: 1;                            /* luôn rõ nét */
-    animation: swing 3s ease-in-out infinite alternate; /* lắc lư nhẹ */
-    z-index: 2;                            /* nổi trên cây thông nếu có */
-    display: block;                        /* khắc phục lệch inline */
-    margin: 0;                              /* xóa margin mặc định */
+    opacity: 1;
+    z-index: 2;
+    /* Bỏ dòng animation ở đây để tránh xung đột cho ảnh center */
 }
 
-/* Ảnh trung tâm trên/dưới */
+/* Ảnh trung tâm trên */
 .decor.center.top {
-    position: fixed;
     top: 20px;
     left: 50%;
-    transform: translateX(-50%); /* giữ trung tâm ngang */
-    margin: 0;                   /* đảm bảo không bị lệch do margin */
+    /* Gộp cả căn giữa và hiệu ứng lắc lư vào 1 dòng transform */
+    transform: translateX(-50%);
+    animation: swingCenter 3s ease-in-out infinite alternate;
 }
 
+/* Ảnh trung tâm dưới */
 .decor.center.bottom {
-    position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    margin: 0;
+    animation: swingCenter 3s ease-in-out infinite alternate;
+}
+
+/* Tạo một Keyframes riêng cho ảnh đã căn giữa */
+@keyframes swingCenter {
+    0% {
+        transform: translateX(-50%) rotate(-5deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(5deg);
+    }
 }
 
 /* 2 ảnh bên trái cũ */
@@ -374,6 +382,7 @@ function startSnow() {
 
 </body>
 </html>
+
 
 
 
