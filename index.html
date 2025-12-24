@@ -163,9 +163,9 @@ img {
 .tree {
     position: fixed;
     bottom: 40px;
-    font-size: 64px;
+    font-size: 80px;  /* to hơn */
     animation: sparkle 3s infinite;
-    z-index: 1;
+    z-index: 0;       /* thấp hơn ảnh bottom decor */
 }
 
 .tree.left { left: 30px; }
@@ -232,17 +232,22 @@ img {
     position: fixed;   /* luôn đứng yên */
     width: clamp(120px, 15vw, 160px); /* to hơn nhưng vẫn co giãn theo màn hình */
     height: auto;      /* giữ tỉ lệ ảnh */
-    z-index: 1;        /* phía dưới card */
     border-radius: 10px;
     opacity: 1;        /* luôn rõ nét */
     animation: swing 3s ease-in-out infinite alternate; /* lắc lư nhẹ */
 }
 
 /* Vị trí ảnh */
-.left.top { top: 50px; left: 10px; }
-.left.bottom { bottom: 50px; left: 10px; }
-.right.top { top: 50px; right: 10px; }
-.right.bottom { bottom: 50px; right: 10px; }
+.left.top { top: 50px; left: 10px; z-index: 1; }
+.right.top { top: 50px; right: 10px; z-index: 1; }
+
+/* Ảnh dưới nổi trên cây thông */
+.left.bottom, .right.bottom {
+    bottom: 60px;   /* nâng lên trên cây thông */
+    left: 10px;
+    right: 10px;
+    z-index: 2;     /* cao hơn cây thông */
+}
 
 /* keyframes cho lắc lư */
 @keyframes swing {
@@ -360,6 +365,7 @@ function startSnow() {
 
 </body>
 </html>
+
 
 
 
