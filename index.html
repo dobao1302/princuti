@@ -11,8 +11,11 @@ body {
     font-family: "Segoe UI", Arial, sans-serif;
     background: linear-gradient(180deg, #7a1f1f, #3a0f0f);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;  /* xếp các phần tử từ trên xuống */
+    justify-content: flex-start; /* bắt đầu từ trên */
+    align-items: center;     /* canh giữa theo ngang */
+    padding-top: 60px;       /* kéo toàn bộ khung lên trên */
+    padding-bottom: 40px;    /* thêm khoảng cách dưới cho cân đối */
     color: white;
     overflow: hidden;
 }
@@ -361,5 +364,6 @@ function startSnow() {
 
 </body>
 </html>
+
 
 
