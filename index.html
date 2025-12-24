@@ -224,17 +224,21 @@ img {
     margin: 0;                              /* xóa margin mặc định */
 }
 
-/* 2 ảnh trung tâm trên/dưới */
+/* Ảnh trung tâm trên/dưới */
 .decor.center.top {
+    position: fixed;
     top: 20px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* giữ trung tâm ngang */
+    margin: 0;                   /* đảm bảo không bị lệch do margin */
 }
 
 .decor.center.bottom {
+    position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    margin: 0;
 }
 
 /* 2 ảnh bên trái cũ */
@@ -370,6 +374,7 @@ function startSnow() {
 
 </body>
 </html>
+
 
 
 
