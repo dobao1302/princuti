@@ -230,7 +230,7 @@ img {
 /* ================= ẢNH TRANG TRÍ 2 BÊN (4 ẢNH) ================= */
 .decor {
     position: fixed;   /* luôn đứng yên */
-    width: 100px;      /* kích thước ảnh */
+    width: clamp(120px, 15vw, 160px); /* to hơn nhưng vẫn co giãn theo màn hình */
     height: auto;      /* giữ tỉ lệ ảnh */
     z-index: 1;        /* phía dưới card */
     border-radius: 10px;
@@ -360,6 +360,7 @@ function startSnow() {
 
 </body>
 </html>
+
 
 
 
