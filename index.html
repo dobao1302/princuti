@@ -262,6 +262,21 @@ img {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
+.decor {
+    position: fixed;   /* luôn đứng yên khi scroll */
+    width: 100px;      /* chỉnh kích thước ảnh to hơn */
+    height: auto;      /* giữ tỉ lệ ảnh */
+    z-index: 1;        /* phía dưới card */
+    border-radius: 10px;
+}
+
+/* Bên trái */
+.left.top { top: 50px; left: 10px; }
+.left.bottom { bottom: 50px; left: 10px; }
+
+/* Bên phải */
+.right.top { top: 50px; right: 10px; }
+.right.bottom { bottom: 50px; right: 10px; }
 
 </style>
 
@@ -372,6 +387,7 @@ function startSnow() {
 
 </body>
 </html>
+
 
 
 
