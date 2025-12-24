@@ -159,28 +159,6 @@ img {
     50% { opacity: 1; }
 }
 
-/* ================= CÂY THÔNG ================= */
-.tree {
-    position: fixed;
-    bottom: 40px;
-    font-size: 80px;  /* to hơn */
-    animation: sparkle 3s infinite;
-    z-index: 0;       /* thấp hơn ảnh bottom decor */
-}
-
-.tree.left { left: 30px; }
-.tree.right { right: 30px; }
-
-@keyframes sparkle {
-    0%, 100% {
-        filter: drop-shadow(0 0 5px gold);
-        transform: scale(1);
-    }
-    50% {
-        filter: drop-shadow(0 0 14px gold);
-        transform: scale(1.06);
-    }
-}
 /* ================= DÂY TREO + ĐÈN + QUÀ ================= */
 .rope {
     position: fixed;
@@ -226,34 +204,51 @@ img {
     50%  { transform: rotate(5deg); }
     100% { transform: rotate(-5deg); }
 }
-    
 /* ================= ẢNH TRANG TRÍ 2 BÊN (4 ẢNH) ================= */
 .decor {
-    position: fixed;   /* luôn đứng yên */
-    width: clamp(120px, 15vw, 160px); /* to hơn nhưng vẫn co giãn theo màn hình */
-    height: auto;      /* giữ tỉ lệ ảnh */
+    position: fixed;                /* luôn đứng yên */
+    width: clamp(120px, 15vw, 160px); /* to hơn nhưng vẫn co giãn */
+    height: auto;                   /* giữ tỉ lệ ảnh */
     border-radius: 10px;
-    opacity: 1;        /* luôn rõ nét */
+    opacity: 1;                     /* luôn rõ nét */
     animation: swing 3s ease-in-out infinite alternate; /* lắc lư nhẹ */
+    z-index: 2;                     /* nổi trên cây thông */
 }
 
 /* Vị trí ảnh */
-.left.top { top: 50px; left: 10px; z-index: 1; }
-.right.top { top: 50px; right: 10px; z-index: 1; }
-
-/* Ảnh dưới nổi trên cây thông */
-.left.bottom, .right.bottom {
-    bottom: 60px;   /* nâng lên trên cây thông */
-    left: 10px;
-    right: 10px;
-    z-index: 2;     /* cao hơn cây thông */
-}
+.left.top { top: 50px; left: 10px; }
+.left.bottom { bottom: 120px; left: 10px; }   /* kéo lên cao hơn cây */
+.right.top { top: 50px; right: 10px; }
+.right.bottom { bottom: 120px; right: 10px; } /* kéo lên cao hơn cây */
 
 /* keyframes cho lắc lư */
 @keyframes swing {
     0%   { transform: rotate(-5deg); }
     50%  { transform: rotate(5deg); }
     100% { transform: rotate(-5deg); }
+}
+
+/* ================= CÂY THÔNG ================= */
+.tree {
+    position: fixed;
+    bottom: 40px;
+    font-size: 80px;   /* to hơn 1 chút */
+    animation: sparkle 3s infinite;
+    z-index: 1;        /* thấp hơn ảnh trang trí */
+}
+
+.tree.left { left: 30px; }
+.tree.right { right: 30px; }
+
+@keyframes sparkle {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px gold);
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 14px gold);
+        transform: scale(1.06);
+    }
 }
 
 </style>
@@ -365,6 +360,7 @@ function startSnow() {
 
 </body>
 </html>
+
 
 
 
